@@ -76,7 +76,8 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:background="#fff"
-        android:gravity="left"/>
+        android:gravity="left"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/subtituloStatusB"
@@ -94,6 +95,7 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:background="#fff"
-        android:gravity="left"/>
+        android:gravity="left"
+        android:focusable="false"/>
 
 </LinearLayout>

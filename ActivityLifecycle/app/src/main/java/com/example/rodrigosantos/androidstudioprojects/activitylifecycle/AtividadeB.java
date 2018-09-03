@@ -21,7 +21,7 @@ public class AtividadeB extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.atividade_b);
-        Log.i("ciclodevida", "MainActivity:onCreate");
+        Log.i("ciclodevida", "AtividadeB:onCreate");
 
         dadosatividadeA = getIntent().getStringExtra("atividadesA");
     }
@@ -29,7 +29,7 @@ public class AtividadeB extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i("ciclodevida", "MainActivity:onStart");
+        Log.i("ciclodevida", "AtividadeB:onStart");
 
 
     }
@@ -37,7 +37,7 @@ public class AtividadeB extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i("ciclodevida", "MainActivity:onResume");
+        Log.i("ciclodevida", "AtividadeB:onResume");
         String status = ("Atividade B: Resumed \n Atividade A:Paused");
         statusAtividadeB = (EditText) findViewById(R.id.statusAtividadeB);
         statusAtividadeB.setText(status);
@@ -51,30 +51,30 @@ public class AtividadeB extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i("ciclodevida", "MainActivity:onStop");
+        Log.i("ciclodevida", "AtividadeB:onStop");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i("ciclodevida", "MainActivity:onPause");
+        Log.i("ciclodevida", "AtividadeB:onPause");
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i("ciclodevida", "MainActivity:onDestroy");
+        Log.i("ciclodevida", "AtividadeB:onDestroy");
     }
 
     protected void onRestart() {
         super.onRestart();
-        Log.i("ciclodevida", "MainActivity:onRestart");
+        Log.i("ciclodevida", "AtividadeB:onRestart");
     }
 
 
     public void iniciarAtividade_BC(View view) {
-        Log.i("ciclodevida", "MainActivity:entrou nesse metodo");
+        Log.i("ciclodevida", "AtividadeB:entrou nesse metodo");
 
 //      String dadosAtividades = dadosAtividade.getEditableText().toString();
         Intent intent = new Intent(this, AtividadeC.class);
