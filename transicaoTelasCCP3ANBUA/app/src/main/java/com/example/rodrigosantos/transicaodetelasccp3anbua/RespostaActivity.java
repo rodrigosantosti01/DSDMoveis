@@ -49,6 +49,8 @@ public class RespostaActivity  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resposta);
         Log.i("ciclodevida","RespostaActivity:onCreate");
+
+
         String mensagem = getIntent().getStringExtra("resposta");
         textoTextView = (TextView) findViewById(R.id.resposta);
         textoTextView.setText(mensagem);
