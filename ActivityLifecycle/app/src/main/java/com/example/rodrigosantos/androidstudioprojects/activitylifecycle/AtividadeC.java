@@ -6,12 +6,14 @@ import android.util.Log;
 import android.widget.EditText;
 
 public class AtividadeC extends AppCompatActivity {
-
+    private String dadosatividadeB;
+    private EditText atividadeC;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.atividade_c);
         Log.i("ciclodevida","AtividadeC:onCreate");
+        dadosatividadeB = getIntent().getStringExtra("atividadesB");
 
     }
 
@@ -27,6 +29,10 @@ public class AtividadeC extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i("ciclodevida","AtividadeC:onResume");
+
+        String mensagem = (" B.onPause \n A.onStop \n C.onResume()\n C.onStart()\n C.onCreate \n");
+        atividadeC = (EditText) findViewById(R.id.atividadeC);
+        atividadeC.setText(mensagem + dadosatividadeB);
 
     }
 

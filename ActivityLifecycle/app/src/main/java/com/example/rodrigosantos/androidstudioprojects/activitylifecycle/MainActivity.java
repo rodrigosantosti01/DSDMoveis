@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String status =  ("Atividade A: Resumed");
         statusAtividadeA.setText(status);
 
-        String mensagem = (" A.onResume()\n A.onStart()\n A.onCreate");
+        String mensagem = (" A.onResume()\n A.onStart()\n A.onCreate \n");
         atividadeA= (EditText) findViewById(R.id.atividadeA);
         atividadeA.setText(mensagem);
     }

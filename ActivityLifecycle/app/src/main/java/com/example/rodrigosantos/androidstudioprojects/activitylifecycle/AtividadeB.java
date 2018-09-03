@@ -15,6 +15,7 @@ public class AtividadeB extends AppCompatActivity {
     private EditText atividadeB;
     private EditText statusAtividadeB;
     private String dadosatividadeA;
+    private EditText dadosAtividadeB;
 
 
     @Override
@@ -24,6 +25,8 @@ public class AtividadeB extends AppCompatActivity {
         Log.i("ciclodevida", "AtividadeB:onCreate");
 
         dadosatividadeA = getIntent().getStringExtra("atividadesA");
+
+        dadosAtividadeB = findViewById(R.id.atividadeB);
     }
 
     @Override
@@ -42,9 +45,9 @@ public class AtividadeB extends AppCompatActivity {
         statusAtividadeB = (EditText) findViewById(R.id.statusAtividadeB);
         statusAtividadeB.setText(status);
 
-        String mensagem = (" B.onResume()\n B.onStart()\n B.onCreate");
+        String mensagem = (" B.onResume()\n B.onStart()\n B.onCreate \n");
         atividadeB = (EditText) findViewById(R.id.atividadeB);
-        atividadeB.setText(dadosatividadeA + mensagem);
+        atividadeB.setText(mensagem + dadosatividadeA);
 
     }
 
@@ -76,9 +79,10 @@ public class AtividadeB extends AppCompatActivity {
     public void iniciarAtividade_BC(View view) {
         Log.i("ciclodevida", "AtividadeB:entrou nesse metodo");
 
-//      String dadosAtividades = dadosAtividade.getEditableText().toString();
+        String dadosAtividades = dadosAtividadeB.getEditableText().toString();
+
         Intent intent = new Intent(this, AtividadeC.class);
-//      intent.putExtra("atividadesA", dadosAtividades);
+        intent.putExtra("atividadesB", dadosAtividades);
         startActivity(intent);
     }
 }
