@@ -1,6 +1,7 @@
 package com.example.rodrigosantos.androidstudioprojects.activitylifecycle;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -84,5 +85,8 @@ public class AtividadeB extends AppCompatActivity {
         Intent intent = new Intent(this, AtividadeC.class);
         intent.putExtra("atividadesB", dadosAtividades);
         startActivity(intent);
+    }
+
+    public void dialogo(View view){
     }
 }
