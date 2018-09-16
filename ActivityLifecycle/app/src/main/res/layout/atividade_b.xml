@@ -4,98 +4,94 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AtividadeB"
+    android:id="@+id/activity_b"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AtividadeB"
-    android:background="#2db300"
+    android:padding="8dp"
+    android:background="@color/dark_green"
     android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/tituloB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:gravity="center"
-        android:text="ATIVIDADE B"
-        android:textColor="#fff"
-        android:textSize="40dp"
-        />
+        android:text="@string/activity_b_label"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/font_large"
+        android:textColor="@color/light_green"
+        android:paddingBottom="16dp"/>
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
 
         <Button
-            android:id="@+id/button_BA"
-            android:layout_width="0dp"
-            android:layout_weight="3.1"
+            android:id="@+id/btn_start_a"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="iniciarAtividade_BA"
-            android:text="@string/btnA" />
+            android:text="@string/btn_start_a_label"
+            android:onClick="startActivityA"/>
 
         <Button
-            android:id="@+id/button_BC"
-            android:layout_width="0dp"
-            android:layout_weight="3.1"
+            android:id="@+id/btn_start_c"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="iniciarAtividade_BC"
-            android:text="@string/btnC" />
+            android:text="@string/btn_start_c_label"
+            android:layout_toRightOf="@id/btn_start_a"
+            android:onClick="startActivityC"/>
 
         <Button
-            android:id="@+id/button_B"
-            android:layout_width="0dp"
-            android:layout_weight="3.9"
+            android:id="@+id/btn_finish_b"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="terminarAtividadeB"
-            android:text="TERMINAR B" />
+            android:text="@string/btn_finish_b_label"
+            android:layout_toRightOf="@id/btn_start_c"
+            android:onClick="finishActivityB"/>
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_weight="3.0"
+            android:id="@+id/btn_start_dialog"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="dialogo"
-            android:text="@string/dialogo" />
-    </LinearLayout>
-
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:onClick="startDialog"
+            android:text="@string/btn_start_dialog_label" />
+    </RelativeLayout>
     <TextView
-        android:id="@+id/subtituloB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/lista"
-        android:textColor="#fff"
-        android:textSize="22dp" />
-
-    <EditText
-        android:id="@+id/atividadeB"
+        android:textSize="@dimen/font_medium"
+        android:text="@string/lifecycle_method_list"
+        android:textColor="@color/light_green" />
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:background="#fff"
-        android:gravity="left"
-        android:focusable="false"/>
+        android:layout_height="160dp">
+        <TextView
+            android:id="@+id/status_view_b"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:padding="4dp"
+            android:typeface="monospace"/>
+    </ScrollView>
 
     <TextView
-        android:id="@+id/subtituloStatusB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:text="@string/status"
-        android:textColor="#fff"
-        android:textSize="22dp" />
-
-    <EditText
-        android:id="@+id/statusAtividadeB"
+        android:textSize="@dimen/font_medium"
+        android:text="@string/activity_status"
+        android:textColor="@color/light_green" />
+    <TextView
+        android:id="@+id/status_view_all_b"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:background="#fff"
-        android:gravity="left"
-        android:focusable="false"/>
-
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:padding="4dp"
+        android:typeface="monospace"/>
 </LinearLayout>

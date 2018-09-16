@@ -13,8 +13,7 @@ import android.widget.TextView;
     RA: 816155559
  */
 
-
-public class AtividadeB extends Activity {
+public class AtividadeA extends Activity {
 
     private String mActivityName;
     private TextView mStatusView;
@@ -24,10 +23,10 @@ public class AtividadeB extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.atividade_b);
-        mActivityName = getString(R.string.activity_b);
-        mStatusView = (TextView)findViewById(R.id.status_view_b);
-        mStatusAllView = (TextView)findViewById(R.id.status_view_all_b);
+        setContentView(R.layout.atividade_a);
+        mActivityName = getString(R.string.activity_a);
+        mStatusView = (TextView)findViewById(R.id.status_view_a);
+        mStatusAllView = (TextView)findViewById(R.id.status_view_all_a);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
     }
@@ -74,22 +73,23 @@ public class AtividadeB extends Activity {
     }
 
     public void startDialog(View v) {
-        Intent intent = new Intent(AtividadeB.this, DialogActivity.class);
+        Intent intent = new Intent(AtividadeA.this, DialogActivity.class);
         startActivity(intent);
     }
 
-    public void startActivityA(View v) {
-        Intent intent = new Intent(AtividadeB.this, AtividadeA.class);
+    public void startActivityB(View v) {
+        Intent intent = new Intent(AtividadeA.this, AtividadeB.class);
         startActivity(intent);
     }
 
     public void startActivityC(View v) {
-        Intent intent = new Intent(AtividadeB.this, AtividadeC.class);
+        Intent intent = new Intent(AtividadeA.this, AtividadeC.class);
         startActivity(intent);
     }
 
-    public void finishActivityB(View v) {
-        AtividadeB.this.finish();
+    public void finishActivityA(View v) {
+        AtividadeA.this.finish();
     }
 
 }
+

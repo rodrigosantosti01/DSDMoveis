@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".AtividadeC"
-    android:id="@+id/activity_c"
+    android:id="@+id/activity_a"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/dark_red"
-    android:orientation="vertical">
-
+    android:background="@color/dark_blue"
+    android:orientation="vertical"
+    tools:context=".AtividadeA">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/activity_c_label"
+        android:text="@string/activity_a_label"
         android:gravity="center_horizontal"
         android:textSize="@dimen/font_large"
-        android:textColor="@color/light_red"
+        android:textColor="@color/light_blue"
         android:paddingBottom="16dp"/>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,34 +28,34 @@
         android:layout_gravity="center_horizontal">
 
         <Button
-            android:id="@+id/btn_start_a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_start_a_label"
-            android:onClick="startActivityA"/>
-
-        <Button
             android:id="@+id/btn_start_b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_start_b_label"
-            android:layout_toRightOf="@id/btn_start_a"
             android:onClick="startActivityB"/>
 
         <Button
-            android:id="@+id/btn_finish_c"
+            android:id="@+id/btn_start_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_finish_b_label"
+            android:text="@string/btn_start_c_label"
             android:layout_toRightOf="@id/btn_start_b"
-            android:onClick="finishActivityC"/>
+            android:onClick="startActivityC"/>
+
+        <Button
+            android:id="@+id/btn_finish_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_finish_a_label"
+            android:layout_toRightOf="@id/btn_start_c"
+            android:onClick="finishActivityA"/>
 
         <Button
             android:id="@+id/btn_start_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_start_dialog_label"
-            android:layout_toRightOf="@id/btn_finish_c"
+            android:layout_toRightOf="@id/btn_finish_a"
             android:onClick="startDialog"/>
     </RelativeLayout>
     <TextView
@@ -62,12 +63,12 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_medium"
         android:text="@string/lifecycle_method_list"
-        android:textColor="@color/light_red" />
+        android:textColor="@color/light_blue" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="160dp">
         <TextView
-            android:id="@+id/status_view_c"
+            android:id="@+id/status_view_a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
@@ -81,9 +82,9 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/font_medium"
         android:text="@string/activity_status"
-        android:textColor="@color/light_red" />
+        android:textColor="@color/light_blue" />
     <TextView
-        android:id="@+id/status_view_all_c"
+        android:id="@+id/status_view_all_a"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
