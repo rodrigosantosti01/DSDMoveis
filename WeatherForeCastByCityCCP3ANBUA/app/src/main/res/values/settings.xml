@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="api_key">760b6b290e4cb8eef60b59b365fea7b9</string>
+    <string name="web_service_url">http://api.openweathermap.org/data/2.5/forecast?q=</string>
+    <string name="image_download_url">http://openweathermap.org/img/w/%s.png</string>
+</resources>
