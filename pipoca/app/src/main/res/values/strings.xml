@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">pipoca</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_buscar">Buscar</string>
+    <string-array name="generos">
+        <item>Todos</item>
+        <item>Ação</item>
+        <item>Aventura</item>
+        <item>Animação</item>
+        <item>Comédia</item>
+        <item>Crime</item>
+        <item>Drama</item>
+        <item>Família</item>
+        <item>Fantasia</item>
+        <item>História</item>
+        <item>Horror</item>
+        <item>Musical</item>
+        <item>Mistério</item>
+        <item>Romance</item>
+        <item>Ficção Científica</item>
+        <item>Filme para TV</item>
+        <item>Suspense</item>
+        <item>Guerra</item>
+        <item>Western</item>
+    </string-array>
+
+</resources>

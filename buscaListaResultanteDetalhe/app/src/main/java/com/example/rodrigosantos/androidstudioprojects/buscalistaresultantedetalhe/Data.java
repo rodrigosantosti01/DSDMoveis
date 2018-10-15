@@ -45,6 +45,7 @@ public class Data {
         ArrayList<String> dominios;
         ArrayList<String> fronteiras;
         ArrayList<String> fusos;
+
         pais = new Pais();
         pais.setNome("Afghanistan");
         pais.setCodigo3("AFG");
