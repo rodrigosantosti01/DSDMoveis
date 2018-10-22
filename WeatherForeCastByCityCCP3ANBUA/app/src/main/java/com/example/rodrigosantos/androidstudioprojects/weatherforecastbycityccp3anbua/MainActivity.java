@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView weatherListView;
     private WeatherArrayAdapter adapter;
     private List<Weather> weatherList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         locationEditText = findViewById(R.id.locationEditText);
         weatherListView = findViewById(R.id.weatherListView);
         weatherList = new ArrayList<>();
+        System.out.println(weatherList);
         adapter = new WeatherArrayAdapter(this,weatherList);
         weatherListView.setAdapter(adapter);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

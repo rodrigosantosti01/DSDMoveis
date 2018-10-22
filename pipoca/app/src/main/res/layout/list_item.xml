@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    
-    
     <ImageView
-        android:src="@mipmap/ic_launcher"
-        android:contentDescription="@string/weather_condition_image"
         android:scaleType="fitCenter"
-        android:id="@+id/conditionImageView"
+        android:id="@+id/imageViewFilme"
         android:layout_width="50dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/ic_local_movies_black_24dp"
+        />
 
     <GridLayout
         android:useDefaultMargins="true"
@@ -28,7 +28,7 @@
             android:layout_row="0"
             android:layout_columnSpan="3"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:id="@+id/dayTextView"
+            android:id="@+id/tituloFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -37,16 +37,7 @@
             android:layout_columnWeight="1"
             android:layout_column="0"
             android:layout_row="1"
-            android:id="@+id/lowTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:layout_columnWeight="1"
-            android:layout_column="1"
-            android:layout_row="1"
-            android:id="@+id/hiTextView"
+            android:id="@+id/diretorFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -55,7 +46,7 @@
             android:layout_columnWeight="1"
             android:layout_column="2"
             android:layout_row="1"
-            android:id="@+id/humidityTextView"
+            android:id="@+id/dataLancamentoFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />

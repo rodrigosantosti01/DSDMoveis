@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaFilmesActivity">
-
+    tools:context=".ListaFilmesActivity"
+    android:orientation="horizontal"
+    android:background="@color/background">
 
     <ListView
-        android:id="@+id/lista_filmes"
+        android:id="@+id/filmesListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
-
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        ></ListView>
 </LinearLayout>

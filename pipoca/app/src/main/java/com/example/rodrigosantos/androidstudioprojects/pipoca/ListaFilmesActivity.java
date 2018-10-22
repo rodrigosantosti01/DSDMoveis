@@ -10,34 +10,34 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaFilmesActivity extends AppCompatActivity {
     public static final String FILME = "filme";
-    ArrayList<Filme> filmes;
-    ArrayList<String> nomes;
+    List<Filme> filmesList;
+    private FilmeAdapter adapter;
+    private ListView filmeListView;
     Activity atividade;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_filmes);
         atividade = this;
         Intent intent = getIntent();
         String genero = intent.getStringExtra(MainActivity.CHAVE_GENERO);
-        filmes = Data.listarFilmes(genero);
-        nomes = Data.listarNomes(filmes);
+        filmesList = Data.listarFilmes(genero);
+        filmeListView = findViewById(R.id.filmesListView);
+        System.out.println(filmesList);
+        adapter = new FilmeAdapter(this,filmesList);
+        filmeListView.setAdapter(adapter);
 
-        ListView listView = (ListView) findViewById(R.id.lista_filmes);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,nomes);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        filmeListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id){
                 Intent intent = new Intent(atividade,DetalheFilme.class);
-                intent.putExtra(FILME,filmes.get(position));
+                intent.putExtra(FILME,filmesList.get(position));
                 startActivity(intent);
             }
         });

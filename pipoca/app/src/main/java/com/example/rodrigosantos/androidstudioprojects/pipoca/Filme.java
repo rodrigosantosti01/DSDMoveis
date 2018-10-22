@@ -16,13 +16,24 @@ public class Filme implements Serializable, Comparable {
     private String posterPath;
     private String diretor;
     private String genero;
+    private Genero generos;
 
+
+    public Filme (){}
+    public Filme(int id, String titulo, String descricao, double popularidade, String dataLancamento, String posterPath, String diretor, String genero,Genero generos) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.popularidade = popularidade;
+        this.dataLancamento = dataLancamento;
+        this.posterPath = posterPath;
+        this.diretor = diretor;
+        this.genero = genero;
+        this.generos = generos;
+    }
 
     public String getGenero() { return genero; }
-
     public void setGenero(String genero) {this.genero = genero; }
-
-
 
     public int getId() {
         return id;
@@ -74,6 +85,11 @@ public class Filme implements Serializable, Comparable {
     public void setDataLancamento(String dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
+
+
+    public Genero getGeneros() {return generos; }
+
+    public void setGeneros(Genero generos) {this.generos = generos; }
 
     @Override
     public String toString() {
