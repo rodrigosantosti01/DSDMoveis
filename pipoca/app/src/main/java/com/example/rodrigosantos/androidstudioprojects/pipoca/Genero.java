@@ -6,8 +6,12 @@ import java.util.List;
 public class Genero implements Serializable {
 
     private int id;
-    private String nome;
+    private String name;
     private List<Filme> filmes;
+
+    public Genero() {
+
+    }
 
     public int getId() {
         return id;
@@ -17,12 +21,12 @@ public class Genero implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public List<Filme> getFilmes() {
@@ -35,6 +39,11 @@ public class Genero implements Serializable {
 
     public Genero(int id, String nome) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + "id=" + id + ", name='" + name + '\'' +'}';
     }
 }

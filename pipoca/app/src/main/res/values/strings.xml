@@ -2,13 +2,18 @@
     <string name="app_name">pipoca</string>
     <string name="action_settings">Settings</string>
     <string name="btn_buscar">Buscar</string>
+    <string name="api_key">395c82c198c40ae62dc618f4f52ae57c</string>
+    <string name="web_service_filmes">https://api.themoviedb.org/3/discover/movie?api_key=</string>
+    <string name="uri_image">https://image.tmdb.org/t/p/w300/</string>
+    <string name="uri_director">https://api.themoviedb.org/3/movie/%s/credits?api_key=395c82c198c40ae62dc618f4f52ae57c</string>
     <string-array name="generos">
-        <item>Todos</item>
+        <item>Selecione um genero</item>
         <item>Ação</item>
         <item>Aventura</item>
         <item>Animação</item>
         <item>Comédia</item>
         <item>Crime</item>
+        <item>Documentário</item>
         <item>Drama</item>
         <item>Família</item>
         <item>Fantasia</item>

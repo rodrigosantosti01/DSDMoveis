@@ -146,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
         try{
             String urlString = baseURL + URLEncoder.encode(cidade,"UTF-8") + "&units=metric&APPID=" + apiKey;
             return new URL(urlString);
-
         }
         catch (Exception e){
             e.printStackTrace();

@@ -1,26 +1,92 @@
 package com.example.rodrigosantos.androidstudioprojects.pipoca;
 
 
-import android.support.annotation.NonNull;
-
 import java.io.Serializable;
 import java.text.Collator;
+import java.util.Date;
 
-public class Filme implements Serializable, Comparable {
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
+
+public class Filme implements Serializable {
 
     private int id;
     private String titulo;
     private String descricao;
     private double popularidade;
-    private String dataLancamento;
+    private Date dataLancamento;
     private String posterPath;
     private String diretor;
-    private String genero;
-    private Genero generos;
+    private Genero genero;
 
 
-    public Filme (){}
-    public Filme(int id, String titulo, String descricao, double popularidade, String dataLancamento, String posterPath, String diretor, String genero,Genero generos) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public double getPopularidade() {
+        return popularidade;
+    }
+
+    public void setPopularidade(double popularidade) {
+        this.popularidade = popularidade;
+    }
+
+    public Date getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(Date dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
+    }
+
+    public String getDiretor() {
+        return diretor;
+    }
+
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public Filme(int id, String titulo, String descricao, double popularidade, Date dataLancamento, String posterPath, String diretor, Genero genero) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -29,94 +95,30 @@ public class Filme implements Serializable, Comparable {
         this.posterPath = posterPath;
         this.diretor = diretor;
         this.genero = genero;
-        this.generos = generos;
     }
 
-    public String getGenero() { return genero; }
-    public void setGenero(String genero) {this.genero = genero; }
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
+    public Filme(int id, String titulo, String descricao, double popularidade, Date dataLancamento, String posterPath, String diretor) {
         this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-    public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public double getPopularidade() {
-        return popularidade;
-    }
-    public void setPopularidade(double popularidade) {
         this.popularidade = popularidade;
-    }
-
-
-    public String getPosterPath() {
-        return posterPath;
-    }
-    public void setPosterPath(String posterPath) {
+        this.dataLancamento = dataLancamento;
         this.posterPath = posterPath;
-    }
-
-    public String getDiretor() {
-        return diretor;
-    }
-    public void setDiretor(String diretor) {
         this.diretor = diretor;
     }
+    public Filme(){
 
-    public String getDataLancamento() {
-        return dataLancamento;
     }
 
-    public void setDataLancamento(String dataLancamento) {
-        this.dataLancamento = dataLancamento;
+    public String getDataFormatada(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        return  formato.format(dataLancamento);
     }
-
-
-    public Genero getGeneros() {return generos; }
-
-    public void setGeneros(Genero generos) {this.generos = generos; }
 
     @Override
     public String toString() {
-        return "Filme{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", popularidade=" + popularidade +
-                ", dataLancamento='" + dataLancamento + '\'' +
-                ", posterPath='" + posterPath + '\'' +
-                ", diretor='" + diretor + '\'' +
-                ", genero='" + genero + '\'' +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        if (o == null || o.getClass() != getClass()) {
-            return 0;
-        } else {
-
-            Filme filme = (Filme) o;
-
-            Collator c = Collator.getInstance();
-
-            c.setStrength(Collator.PRIMARY);
-            return c.compare(this.titulo, filme.getTitulo());
-        }
+        return "Filme: " + this.titulo + " Descrição: " +
+                this.descricao + " Diretor: " + this.diretor;
     }
 }
+

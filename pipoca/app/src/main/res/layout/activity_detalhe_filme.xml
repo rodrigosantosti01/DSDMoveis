@@ -18,6 +18,7 @@ android:background="@color/background">
     android:textColor="#000"
     android:textStyle="bold"/>
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="346dp"
@@ -25,7 +26,9 @@ android:background="@color/background">
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        app:srcCompat="@drawable/ic_local_movies_black_24dp" />
+        app:srcCompat="@android:color/darker_gray" />
+
+
 
 <TextView
     android:layout_width="wrap_content"
@@ -67,9 +70,12 @@ android:background="@color/background">
     android:textColor="#000"
     android:textStyle="bold"/>
 
+
+
 <TextView
     android:id="@+id/descricao"
     android:layout_width="339dp"
+    android:background="@color/description"
     android:layout_height="123dp"
     android:layout_marginLeft="5dp"
     android:layout_alignParentBottom="true"

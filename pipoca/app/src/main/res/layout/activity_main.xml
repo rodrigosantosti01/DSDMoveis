@@ -13,7 +13,8 @@
         android:layout_marginLeft="5dp"
         android:text="Gêneros:"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
     <Spinner
         android:id="@+id/generos"
         android:layout_width="0dp"

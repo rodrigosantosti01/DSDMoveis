@@ -13,19 +13,16 @@ import android.widget.TextView;
 import java.util.List;
 
 public class FilmeAdapter  extends ArrayAdapter<Filme>{
-
-
     public FilmeAdapter(Context context, List<Filme> cast ){
         super(context,-1,cast);
     }
-
     private  static class ViewHolder{
         ImageView filmeImage;
+        TextView filmeId;
         TextView titulo;
         TextView diretor;
         TextView dataLancamento;
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView,
@@ -39,6 +36,7 @@ public class FilmeAdapter  extends ArrayAdapter<Filme>{
             raiz = inflater.inflate(R.layout.list_item,parent,false);
             viewHolder = new ViewHolder();
             raiz.setTag(viewHolder);
+            viewHolder.filmeId  = raiz.findViewById((R.id.filmeId));
             viewHolder.filmeImage = raiz.findViewById(R.id.imageViewFilme);
             viewHolder.titulo = raiz.findViewById(R.id.tituloFilme);
             viewHolder.diretor = raiz.findViewById(R.id.diretorFilme);
@@ -48,9 +46,10 @@ public class FilmeAdapter  extends ArrayAdapter<Filme>{
             raiz = convertView;
             viewHolder = (ViewHolder) raiz.getTag();
         }
+        viewHolder.filmeId.setText("ID:"+toString().valueOf(filme.getId()));
         viewHolder.titulo.setText(filme.getTitulo());
         viewHolder.diretor.setText(filme.getDiretor());
-        viewHolder.dataLancamento.setText(filme.getDataLancamento());
+        viewHolder.dataLancamento.setText(filme.getDataFormatada());
         return  raiz;
     }
 }
