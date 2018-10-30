@@ -23,6 +23,7 @@ import java.util.List;
 
 public class FilmeAdapter  extends ArrayAdapter<Filme>{
     public FilmeAdapter(Context context, List<Filme> cast ){
+
         super(context,-1,cast);
     }
     private  static class ViewHolder{
@@ -50,9 +51,9 @@ public class FilmeAdapter  extends ArrayAdapter<Filme>{
             viewHolder.titulo = raiz.findViewById(R.id.tituloFilme);
             viewHolder.diretor = raiz.findViewById(R.id.diretorFilme);
             viewHolder.dataLancamento = raiz.findViewById(R.id.dataLancamentoFilme);
-
             WebServiceGetDirector director = new WebServiceGetDirector(viewHolder.diretor);
             director.execute(filme.getId());
+            
         }
         else{
             raiz = convertView;
@@ -61,8 +62,12 @@ public class FilmeAdapter  extends ArrayAdapter<Filme>{
         viewHolder.filmeId.setText("ID:"+toString().valueOf(filme.getId()));
         viewHolder.titulo.setText(filme.getTitulo());
         viewHolder.dataLancamento.setText(filme.getDataFormatada());
+
         return  raiz;
     }
+
+
+
     private class WebServiceGetDirector extends AsyncTask<Integer,Void,String> {
         private TextView diretor;
 
@@ -84,7 +89,6 @@ public class FilmeAdapter  extends ArrayAdapter<Filme>{
                     stringBuilder.append(linha);
                 }
                 String json = stringBuilder.toString();
-                System.out.println(json);
                 return json;
             } catch(Exception e){
                 e.printStackTrace();

@@ -70,17 +70,23 @@ android:background="@color/background">
     android:textColor="#000"
     android:textStyle="bold"/>
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="126dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp">
 
+        <TextView
+            android:id="@+id/descricao"
+            android:layout_width="339dp"
+            android:layout_height="123dp"
+            android:background="@color/description"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_marginBottom="53dp" />
 
-<TextView
-    android:id="@+id/descricao"
-    android:layout_width="339dp"
-    android:background="@color/description"
-    android:layout_height="123dp"
-    android:layout_marginLeft="5dp"
-    android:layout_alignParentBottom="true"
-    android:layout_alignStart="@+id/imageView"
-    android:layout_marginBottom="53dp" />
+    </ScrollView>
 
 <TextView
     android:id="@+id/textView4"
