@@ -28,7 +28,6 @@ public class ListaFilmesActivity extends AppCompatActivity {
     private FilmeAdapter adapter;
     private ListView filmeListView;
     Activity atividade;
-    String diretor="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -40,6 +39,8 @@ public class ListaFilmesActivity extends AppCompatActivity {
 
         filmesList = new ArrayList<>();
         filmeListView = findViewById(R.id.filmesListView);
+        adapter = new FilmeAdapter(this,filmesList);
+        filmeListView.setAdapter(adapter);
 
         WebServiceClient filme = new WebServiceClient();
         filme.execute(genero);
@@ -88,11 +89,6 @@ public class ListaFilmesActivity extends AppCompatActivity {
 
                 List<ResponseResult> responseResults = filmesponte.getResults();
                 for (ResponseResult r: responseResults){
-                    System.out.println(r.toString());
-
-                    ListaFilmesActivity.WebServiceGetDirector director = new ListaFilmesActivity.WebServiceGetDirector();
-                    director.execute(r.getId());
-
                     Filme filme = new Filme(
                             r.getId(),
                             r.getTitle(),
@@ -100,12 +96,10 @@ public class ListaFilmesActivity extends AppCompatActivity {
                             r.getPopularity(),
                             r.getRelease_date(),
                             r.getPoster_path(),
-                            diretor);
+                            "");
                     filmesList.add(filme);
                 }
-
-                adapter = new FilmeAdapter(getApplicationContext(),filmesList);
-                filmeListView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -129,50 +123,5 @@ public class ListaFilmesActivity extends AppCompatActivity {
         }
     }
 
-    private class WebServiceGetDirector extends AsyncTask<Integer,Void,String> {
 
-        @Override
-        protected String doInBackground(Integer... idFilme) {
-            try {
-                String uri = getApplicationContext().getString(R.string.uri_director, idFilme[0]+"");
-                URL url = new URL(uri);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                InputStream stream = connection.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-                String linha = null;
-                StringBuilder stringBuilder = new StringBuilder("");
-                while ((linha = reader.readLine()) != null) {
-                    stringBuilder.append(linha);
-                }
-                String json = stringBuilder.toString();
-                System.out.println(json);
-                return json;
-            } catch(Exception e){
-                e.printStackTrace();
-                return null;
-            }
-        }
-
-        @Override
-        protected void onPostExecute(String json) {
-            try {
-
-                Gson gson = new Gson();
-                ResponseCreditos responseCredits = gson.fromJson(json, ResponseCreditos.class);
-                List<ResponseCrew> responseResults = responseCredits.getCrew();
-                Boolean flag = true;
-                Integer contator = 0;
-                while (flag){
-                    if(responseResults.get(contator).getDepartment().equals("Directing")){
-                        diretor = responseResults.get(contator).getName();
-                        flag = false;
-                    }
-                    contator++;
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }

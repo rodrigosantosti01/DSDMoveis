@@ -45,7 +45,7 @@ public class AdicionaContatosActivity extends AppCompatActivity {
                 Toast.makeText(AdicionaContatosActivity.this,
                         getString(R.string.contato_adicionado),
                         Toast.LENGTH_SHORT).show();
-
+                finish();
             }
         });
 
